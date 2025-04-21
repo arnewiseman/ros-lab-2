@@ -1,0 +1,39 @@
+[0.047s] Invoking command in '/home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy PS1=<ROS2-Jazzy>[\u@\h \W]$ /usr/bin/cmake /home/wisemaa3/Desktop/Robots/ros-lab-2/ros_gz_app -DBUILD_TESTING=ON -DCMAKE_INSTALL_PREFIX=/home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app
+[0.999s] -- The C compiler identification is GNU 13.3.0
+[1.435s] -- The CXX compiler identification is GNU 13.3.0
+[1.487s] -- Detecting C compiler ABI info
+[1.800s] -- Detecting C compiler ABI info - done
+[1.820s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.820s] -- Detecting C compile features
+[1.821s] -- Detecting C compile features - done
+[1.852s] -- Detecting CXX compiler ABI info
+[2.112s] -- Detecting CXX compiler ABI info - done
+[2.123s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[2.123s] -- Detecting CXX compile features
+[2.123s] -- Detecting CXX compile features - done
+[2.170s] -- Found ament_cmake: 2.5.3 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[2.341s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.872s] -- Configuring done (2.5s)
+[2.960s] -- Generating done (0.1s)
+[3.003s] -- Build files have been written to: /home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app
+[3.011s] Invoked command in '/home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy PS1=<ROS2-Jazzy>[\u@\h \W]$ /usr/bin/cmake /home/wisemaa3/Desktop/Robots/ros-lab-2/ros_gz_app -DBUILD_TESTING=ON -DCMAKE_INSTALL_PREFIX=/home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app
+[3.013s] Invoking command in '/home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy PS1=<ROS2-Jazzy>[\u@\h \W]$ /usr/bin/cmake --build /home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app -- -j28 -l28
+[3.101s] Invoked command in '/home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy PS1=<ROS2-Jazzy>[\u@\h \W]$ /usr/bin/cmake --build /home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app -- -j28 -l28
+[3.124s] Invoking command in '/home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy PS1=<ROS2-Jazzy>[\u@\h \W]$ /usr/bin/cmake --install /home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app
+[3.135s] -- Install configuration: ""
+[3.140s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ament_index/resource_index/package_run_dependencies/ros_gz_app
+[3.148s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ament_index/resource_index/parent_prefix_path/ros_gz_app
+[3.157s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/environment/ament_prefix_path.sh
+[3.162s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/environment/ament_prefix_path.dsv
+[3.167s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/environment/path.sh
+[3.173s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/environment/path.dsv
+[3.178s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/local_setup.bash
+[3.184s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/local_setup.sh
+[3.190s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/local_setup.zsh
+[3.195s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/local_setup.dsv
+[3.201s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/package.dsv
+[3.210s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ament_index/resource_index/packages/ros_gz_app
+[3.219s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/cmake/ros_gz_appConfig.cmake
+[3.225s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/cmake/ros_gz_appConfig-version.cmake
+[3.232s] -- Installing: /home/wisemaa3/Desktop/Robots/ros-lab-2/install/ros_gz_app/share/ros_gz_app/package.xml
+[3.241s] Invoked command in '/home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy PS1=<ROS2-Jazzy>[\u@\h \W]$ /usr/bin/cmake --install /home/wisemaa3/Desktop/Robots/ros-lab-2/build/ros_gz_app
