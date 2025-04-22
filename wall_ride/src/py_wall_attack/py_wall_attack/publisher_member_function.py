@@ -71,34 +71,45 @@ class WallFollower(Node):
         self.front_dist = mean_window(front_idx)
         self.left_dist = mean_window(left_idx)
 
-    def control_cb(self):
-        """Finite‑state controller."""
-        # -------- State transitions ----------
-        if self.state == "Forward":
-            if self.front_dist < self.front_thresh or self.left_dist < self.d_des - self.band:
-                self.state = "TurnRight"
-            elif self.left_dist > self.d_des + self.band:
-                self.state = "TurnLeft"
 
-        elif self.state in ("TurnLeft", "TurnRight"):
-            # Once the adjustment is done (one timer tick), go back to forward
+def control_cb(self):
+    """Finite‑state controller."""
+    # -------- State transitions ----------
+    if self.state == "Forward":
+        if self.front_dist < self.front_thresh:
+            self.state = "TurnRight"  # Wall ahead, turn away
+        elif self.left_dist < self.d_des - self.band:
+            self.state = "TurnRight"  # Too close to wall, turn away
+        elif self.left_dist > self.d_des + self.band:
+            self.state = "TurnLeft"   # Too far from wall, turn toward
+
+    elif self.state == "TurnLeft":
+        # Only return to Forward if we're at the right distance
+        if self.left_dist <= self.d_des + self.band:
             self.state = "Forward"
 
-        # -------- State actions ---------------
-        cmd = Twist()
-        if self.state == "Forward":
-            cmd.linear.x = self.v_fwd
-            cmd.angular.z = 0.0
-        elif self.state == "TurnLeft":
-            cmd.angular.z = +self.w_turn
-        elif self.state == "TurnRight":
-            cmd.angular.z = -self.w_turn
+    elif self.state == "TurnRight":
+        # For a front obstacle, make sure we've cleared it before returning to Forward
+        if self.front_dist > self.front_thresh and self.left_dist >= self.d_des - self.band:
+            self.state = "Forward"
 
-        self.cmd_pub.publish(cmd)
-        self.get_logger().info(
-            f"{self.state:<10}  front={self.front_dist:4.2f}  left={self.left_dist:4.2f}  "
-            f"→ v={cmd.linear.x:4.2f}  w={cmd.angular.z:4.2f}"
-        )
+    # -------- State actions ---------------
+    cmd = Twist()
+    if self.state == "Forward":
+        cmd.linear.x = self.v_fwd
+        cmd.angular.z = 0.0
+    elif self.state == "TurnLeft":
+        cmd.linear.x = self.v_fwd * 0.5  # Keep moving forward while turning
+        cmd.angular.z = +self.w_turn
+    elif self.state == "TurnRight":
+        cmd.linear.x = self.v_fwd * 0.5  # Keep moving forward while turning
+        cmd.angular.z = -self.w_turn
+
+    self.cmd_pub.publish(cmd)
+    self.get_logger().info(
+        f"{self.state:<10}  front={self.front_dist:4.2f}  left={self.left_dist:4.2f}  "
+        f"→ v={cmd.linear.x:4.2f}  w={cmd.angular.z:4.2f}"
+    )
 
 
 def main(args=None):
