@@ -25,9 +25,12 @@ def generate_launch_description():
             executable='wall_follower',      # console_script name you set in setup.py
             name='wall_follower',
             output='screen',
-            parameters=[                     # optional: tune via params
-                {'d_des': 0.5},
-                {'Kp': 1.0},
+            parameters=[
+                {'d_des': 0.6},
+                {'band': 0.05},
+                {'front_thresh': 0.4},
+                {'v_forward': 0.25},
+                {'w_turn': 0.7},
             ]
         ),
     ])
